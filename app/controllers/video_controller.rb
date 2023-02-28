@@ -4,7 +4,7 @@ class VideoController < ApplicationController
   before_action :set_opentok_vars
 
   def set_opentok_vars
-    @api_key = ENV['OPENTOK_API_KEY']
+    @api_key = "47671421"
     @api_secret = "239c35564d367828681de0398afb3ac47430cbdb"
     @session_id = Session.create_or_load_session_id
     @moderator_name = ENV['MODERATOR_NAME']

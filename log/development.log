@@ -2801,3 +2801,139 @@ Processing by VideoController#chat as HTML
 Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.7ms | Allocations: 4629)
 
 
+Started GET "/" for 127.0.0.1 at 2023-02-28 18:55:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1567)
+  Rendered layout layouts/application.html.erb (Duration: 67.4ms | Allocations: 25567)
+Completed 200 OK in 102ms (Views: 71.6ms | ActiveRecord: 5.4ms | Allocations: 50074)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-28 18:55:58 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2224)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-28 18:55:58 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.5ms | Allocations: 819)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1741)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4249)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 5988)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-28 18:55:58 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.2ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 2.5ms | Allocations: 615)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 794)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3301)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 0.9ms | Allocations: 4982)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-28 18:56:01 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2672)
+Completed 200 OK in 13ms (Views: 6.0ms | ActiveRecord: 1.0ms | Allocations: 4806)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-02-28 19:13:10 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-28 19:13:15 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1147)
+  Rendered layout layouts/application.html.erb (Duration: 52.8ms | Allocations: 25205)
+Completed 200 OK in 85ms (Views: 55.7ms | ActiveRecord: 4.6ms | Allocations: 47753)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-28 19:13:44 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2240)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-28 19:13:44 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered video/_chat.html.erb (Duration: 1.4ms | Allocations: 831)
+  Rendered video/_button-chat.html.erb (Duration: 0.3ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1734)
+  Rendered layout layouts/application.html.erb (Duration: 7.7ms | Allocations: 4245)
+Completed 200 OK in 14ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 6002)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-28 19:13:44 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 627)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 806)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3314)
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 5014)
+
+
