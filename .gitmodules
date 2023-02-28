@@ -1,0 +1,3 @@
+[submodule "video-chat"]
+	path = video-chat
+	url = git@github.com:AnjaliDubey2607/video-chat.git

@@ -1,0 +1,2803 @@
+  [1m[35m (106.6ms)[0m  [1m[35mCREATE DATABASE "video_watch_development" ENCODING = 'unicode'[0m
+  [1m[35m (80.6ms)[0m  [1m[35mCREATE DATABASE "video_watch_test" ENCODING = 'unicode'[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSessions (20230223120021)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "session_id" character varying NOT NULL, "expired" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230223120021"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-02-23 12:02:57.442549"], ["updated_at", "2023-02-23 12:02:57.442549"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:03:26 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.4ms | Allocations: 476)
+  Rendered layout layouts/application.html.erb (Duration: 26.2ms | Allocations: 6605)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms | Allocations: 13187)
+
+
+  
+ActionView::Template::Error (undefined method `stylesheet_pack_tag' for #<ActionView::Base:0x0000000000b1d0>
+Did you mean?  stylesheet_path
+               stylesheet_link_tag):
+    14:       var api_secret = '<%= @api_secret %>';
+    15:       var session_id = '<%= @session_id %>';
+    16:     </script>
+    17:     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/views/layouts/application.html.erb:17
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:04:13 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.4ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 4785)
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 0.0ms | Allocations: 5772)
+
+
+  
+ActionView::Template::Error (undefined method `stylesheet_tag' for #<ActionView::Base:0x0000000000b590>
+Did you mean?  stylesheet_path
+               stylesheet_url):
+    14:       var api_secret = '<%= @api_secret %>';
+    15:       var session_id = '<%= @session_id %>';
+    16:     </script>
+    17:     <%= stylesheet_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/views/layouts/application.html.erb:17
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:04:16 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4306)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 4620)
+
+
+  
+ActionView::Template::Error (undefined method `stylesheet_tag' for #<ActionView::Base:0x0000000000b8b0>
+Did you mean?  stylesheet_path
+               stylesheet_url):
+    14:       var api_secret = '<%= @api_secret %>';
+    15:       var session_id = '<%= @session_id %>';
+    16:     </script>
+    17:     <%= stylesheet_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    18:     <%= javascript_tag 'application', 'data-turbolinks-track': 'reload' %>
+    19:   </head>
+    20: 
+  
+app/views/layouts/application.html.erb:17
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:04:27 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.8ms | Allocations: 115)
+  Rendered layout layouts/application.html.erb (Duration: 376.4ms | Allocations: 76759)
+Completed 200 OK in 379ms (Views: 378.4ms | ActiveRecord: 0.0ms | Allocations: 77804)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:05:54 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.4ms | Allocations: 116)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3415)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 4428)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:07:52 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1083)
+  Rendered layout layouts/application.html.erb (Duration: 6.2ms | Allocations: 4005)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5018)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-23 18:08:10 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Anjali Dubey", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 751)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:08:10 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.8ms | Allocations: 671)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 3170)
+Completed 200 OK in 10ms (Views: 9.6ms | ActiveRecord: 0.0ms | Allocations: 3514)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-23 18:10:27 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 1ms (Allocations: 627)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:10:27 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1026)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3949)
+Completed 200 OK in 9ms (Views: 8.4ms | Allocations: 4962)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:38:53 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.0ms | Allocations: 704)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3256)
+Completed 200 OK in 7ms (Views: 6.6ms | Allocations: 4094)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-23 18:39:07 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Anjali Dubey", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=Anjali+Dubey
+Completed 302 Found in 4ms (Allocations: 741)
+
+
+Started GET "/party?name=Anjali+Dubey" for 127.0.0.1 at 2023-02-23 18:39:07 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali Dubey"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered video/_chat.html.erb (Duration: 3.0ms | Allocations: 793)
+  Rendered video/_button-chat.html.erb (Duration: 0.7ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 1691)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 4189)
+Completed 200 OK in 18ms (Views: 17.4ms | Allocations: 4578)
+
+
+Started GET "/party?name=Anjali+Dubey" for 127.0.0.1 at 2023-02-23 18:39:07 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali Dubey"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 580)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 755)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3253)
+Completed 200 OK in 5ms (Views: 4.9ms | Allocations: 3589)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-23 18:39:23 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 112)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2616)
+Completed 200 OK in 7ms (Views: 5.1ms | Allocations: 3363)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-23 18:41:28 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1940)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2012)
+Completed 500 Internal Server Error in 6ms (Allocations: 3359)
+
+
+  
+ActionView::Template::Error (Missing partial /_chat with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}.
+
+Searched in:
+  * "/home/cis/Desktop/video-watch/app/views"
+  * "/home/cis/.rvm/gems/ruby-3.0.0/gems/actiontext-7.0.4.2/app/views"
+  * "/home/cis/.rvm/gems/ruby-3.0.0/gems/actionmailbox-7.0.4.2/app/views"
+
+Did you mean?  video/chat
+               video/header
+               action_text/contents/content
+               layouts/action_text/contents/content
+               action_text/attachment_galleries/attachment_gallery
+               action_text/attachables/missing_attachable):
+    1: <h1>Video#chat</h1>
+    2: <p>Find me in app/views/video/chat.html.erb</p>
+    3: <%= render "/chat"%>
+  
+app/views/video/chat.html.erb:3
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-23 18:41:49 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/_chat.html.erb (Duration: 0.9ms | Allocations: 506)
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.6ms | Allocations: 739)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3677)
+Completed 200 OK in 10ms (Views: 8.6ms | Allocations: 5037)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-23 18:41:57 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 281)
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.9ms | Allocations: 337)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 2827)
+Completed 200 OK in 8ms (Views: 6.6ms | Allocations: 3512)
+
+
+Started GET "/chat" for 127.0.0.1 at 2023-02-23 18:44:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/chat"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-23 18:44:19 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 6.4ms | Allocations: 997)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 3930)
+Completed 200 OK in 33ms (Views: 32.6ms | Allocations: 4893)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-23 18:44:27 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 4ms (Allocations: 661)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 18:44:27 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.7ms | Allocations: 133)
+  Rendered video/_chat.html.erb (Duration: 6.7ms | Allocations: 772)
+  Rendered video/_button-chat.html.erb (Duration: 0.5ms | Allocations: 109)
+  Rendered video/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 1654)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4152)
+Completed 200 OK in 24ms (Views: 23.3ms | Allocations: 4542)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 18:44:28 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.5ms | Allocations: 590)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 765)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3263)
+Completed 200 OK in 17ms (Views: 16.5ms | Allocations: 3599)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:09 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.2ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 4.9ms | Allocations: 588)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 6.8ms | Allocations: 763)
+  Rendered layout layouts/application.html.erb (Duration: 26.4ms | Allocations: 4504)
+Completed 200 OK in 30ms (Views: 28.8ms | Allocations: 4855)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:09 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 4.3ms | Allocations: 592)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 767)
+  Rendered layout layouts/application.html.erb (Duration: 23.7ms | Allocations: 3280)
+Completed 200 OK in 26ms (Views: 24.4ms | Allocations: 3631)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:10 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 2.1ms | Allocations: 590)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 765)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 3278)
+Completed 200 OK in 10ms (Views: 9.5ms | Allocations: 3629)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:10 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.5ms | Allocations: 582)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 757)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3270)
+Completed 200 OK in 10ms (Views: 9.4ms | Allocations: 3621)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:11 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 2.3ms | Allocations: 580)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 755)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 3268)
+Completed 200 OK in 13ms (Views: 11.6ms | Allocations: 3619)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:11 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 580)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 755)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3268)
+Completed 200 OK in 7ms (Views: 6.2ms | Allocations: 3619)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:11 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 584)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3272)
+Completed 200 OK in 8ms (Views: 7.1ms | Allocations: 3623)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-23 19:17:11 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.1ms | Allocations: 580)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 755)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 3268)
+Completed 200 OK in 11ms (Views: 9.8ms | Allocations: 3619)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-23 19:19:03 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 141)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 3093)
+Completed 200 OK in 9ms (Views: 8.2ms | Allocations: 4473)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-23 19:50:01 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2590)
+Completed 200 OK in 8ms (Views: 6.1ms | Allocations: 3807)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 12:10:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1339)
+  Rendered layout layouts/application.html.erb (Duration: 130.2ms | Allocations: 38491)
+Completed 200 OK in 142ms (Views: 133.9ms | ActiveRecord: 0.0ms | Allocations: 43977)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 12:10:52 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Anjali Dubey", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=Anjali+Dubey
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 789)
+
+
+Started GET "/party?name=Anjali+Dubey" for 127.0.0.1 at 2023-02-27 12:10:52 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali Dubey"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 1.5ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 691)
+  Rendered video/_button-chat.html.erb (Duration: 1.0ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 1609)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 4123)
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.0ms | Allocations: 4537)
+
+
+Started GET "/party?name=Anjali+Dubey" for 127.0.0.1 at 2023-02-27 12:10:52 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali Dubey"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 483)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 658)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 3171)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3525)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 12:11:39 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.5ms | Allocations: 902)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 4248)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 5280)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 12:11:43 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.8ms | Allocations: 560)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3476)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3835)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 12:11:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1339)
+  Rendered layout layouts/application.html.erb (Duration: 60.5ms | Allocations: 26060)
+Completed 200 OK in 69ms (Views: 63.0ms | ActiveRecord: 0.0ms | Allocations: 31546)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 12:12:10 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"asdf", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=asdf
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 779)
+
+
+Started GET "/party?name=asdf" for 127.0.0.1 at 2023-02-27 12:12:10 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"asdf"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.4ms | Allocations: 677)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1595)
+  Rendered layout layouts/application.html.erb (Duration: 8.8ms | Allocations: 4511)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 4925)
+
+
+Started GET "/party?name=asdf" for 127.0.0.1 at 2023-02-27 12:12:10 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"asdf"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 495)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 670)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3585)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3939)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 12:53:15 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 6.8ms | Allocations: 1339)
+  Rendered layout layouts/application.html.erb (Duration: 44.9ms | Allocations: 25788)
+Completed 200 OK in 55ms (Views: 48.0ms | ActiveRecord: 0.0ms | Allocations: 31274)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 12:53:25 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 781)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 12:53:25 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.7ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.5ms | Allocations: 693)
+  Rendered video/_button-chat.html.erb (Duration: 0.3ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 4527)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4941)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 12:53:25 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 489)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 664)
+  Rendered layout layouts/application.html.erb (Duration: 7.3ms | Allocations: 3579)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 3933)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 12:53:27 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.6ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | Allocations: 3056)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3722)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 12:54:53 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 516)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 691)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 3606)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 3960)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 12:54:59 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.6ms | Allocations: 510)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 685)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 3600)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 3954)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 12:54:59 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.6ms | Allocations: 510)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 685)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3600)
+Completed 200 OK in 4ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3954)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 13:17:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1474)
+  Rendered layout layouts/application.html.erb (Duration: 51.0ms | Allocations: 26489)
+Completed 200 OK in 60ms (Views: 53.6ms | ActiveRecord: 0.0ms | Allocations: 31975)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 13:17:41 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 807)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 13:17:41 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.5ms | Allocations: 724)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1642)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 4558)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4972)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 13:17:41 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.5ms | Allocations: 522)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 697)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 3612)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 3966)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:17:44 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 3056)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 3751)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 13:21:45 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.2ms | Allocations: 524)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 699)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3614)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 3968)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:21:54 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2928)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3574)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:28:41 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 5ms (ActiveRecord: 0.0ms | Allocations: 1012)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4.2) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4.2) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4.2) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:28:45 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.0ms | Allocations: 639)
+
+
+  
+ActionController::InvalidAuthenticityToken (Can't verify CSRF token authenticity.):
+  
+actionpack (7.0.4.2) lib/action_controller/metal/request_forgery_protection.rb:251:in `handle_unverified_request'
+actionpack (7.0.4.2) lib/action_controller/metal/request_forgery_protection.rb:284:in `handle_unverified_request'
+actionpack (7.0.4.2) lib/action_controller/metal/request_forgery_protection.rb:273:in `verify_authenticity_token'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:400:in `block in make_lambda'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:199:in `block (2 levels) in halting'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:200:in `block in halting'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:595:in `block in invoke_before'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:595:in `each'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:595:in `invoke_before'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:116:in `block in run_callbacks'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:138:in `run_callbacks'
+actionpack (7.0.4.2) lib/abstract_controller/callbacks.rb:233:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:67:in `block in process_action'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.0.4.2) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (7.0.4.2) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.0.4.2) lib/action_controller/metal/instrumentation.rb:66:in `process_action'
+actionpack (7.0.4.2) lib/action_controller/metal/params_wrapper.rb:259:in `process_action'
+activerecord (7.0.4.2) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (7.0.4.2) lib/abstract_controller/base.rb:151:in `process'
+actionview (7.0.4.2) lib/action_view/rendering.rb:39:in `process'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:188:in `dispatch'
+actionpack (7.0.4.2) lib/action_controller/metal.rb:251:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (7.0.4.2) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.0.4.2) lib/action_dispatch/routing/route_set.rb:852:in `call'
+rack (2.2.6.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.6.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.6.2) lib/rack/conditional_get.rb:40:in `call'
+rack (2.2.6.2) lib/rack/head.rb:12:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/permissions_policy.rb:38:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/http/content_security_policy.rb:36:in `call'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.6.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/cookies.rb:704:in `call'
+activerecord (7.0.4.2) lib/active_record/migration.rb:603:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (7.0.4.2) lib/active_support/callbacks.rb:99:in `run_callbacks'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:28:in `call'
+web-console (4.2.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/show_exceptions.rb:26:in `call'
+railties (7.0.4.2) lib/rails/rack/logger.rb:40:in `call_app'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `block in call'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (7.0.4.2) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (7.0.4.2) lib/rails/rack/logger.rb:25:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/remote_ip.rb:93:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.6.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.6.2) lib/rack/runtime.rb:22:in `call'
+activesupport (7.0.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:61:in `block in call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:26:in `collect_events'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/server_timing.rb:60:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/static.rb:23:in `call'
+rack (2.2.6.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (7.0.4.2) lib/action_dispatch/middleware/host_authorization.rb:137:in `call'
+railties (7.0.4.2) lib/rails/engine.rb:530:in `call'
+puma (5.6.5) lib/puma/configuration.rb:252:in `call'
+puma (5.6.5) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.6.5) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.6.5) lib/puma/request.rb:76:in `handle_request'
+puma (5.6.5) lib/puma/server.rb:443:in `process_client'
+puma (5.6.5) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 13:28:47 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered video/_chat.html.erb (Duration: 1.5ms | Allocations: 724)
+  Rendered video/_button-chat.html.erb (Duration: 5.1ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 1626)
+  Rendered layout layouts/application.html.erb (Duration: 86.3ms | Allocations: 26008)
+Completed 200 OK in 93ms (Views: 88.8ms | ActiveRecord: 0.0ms | Allocations: 29606)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:28:51 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.4ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 3056)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3751)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 13:32:47 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 8.1ms | Allocations: 750)
+  Rendered layout layouts/application.html.erb (Duration: 19.2ms | Allocations: 3666)
+Completed 200 OK in 22ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 4079)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 13:32:57 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 655)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 13:32:57 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.9ms | Allocations: 429)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 604)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 3519)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.0ms | Allocations: 3873)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 13:32:57 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 435)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 610)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3525)
+Completed 200 OK in 7ms (Views: 6.3ms | ActiveRecord: 0.0ms | Allocations: 3879)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:33:00 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 2928)
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 3483)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 13:34:10 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 2.2ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 39.8ms | Allocations: 3336)
+Completed 200 OK in 46ms (Views: 45.1ms | ActiveRecord: 0.0ms | Allocations: 3690)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 13:34:21 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"aaaa", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=aaaa
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms | Allocations: 522)
+
+
+Started GET "/party?name=aaaa" for 127.0.0.1 at 2023-02-27 13:34:21 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"aaaa"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 437)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 23.4ms | Allocations: 612)
+  Rendered layout layouts/application.html.erb (Duration: 75.1ms | Allocations: 3527)
+Completed 200 OK in 82ms (Views: 81.3ms | ActiveRecord: 0.0ms | Allocations: 3881)
+
+
+Started GET "/party?name=aaaa" for 127.0.0.1 at 2023-02-27 13:34:22 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"aaaa"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.2ms | Allocations: 445)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 620)
+  Rendered layout layouts/application.html.erb (Duration: 19.5ms | Allocations: 3535)
+Completed 200 OK in 28ms (Views: 26.6ms | ActiveRecord: 0.0ms | Allocations: 3889)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:34:30 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 26.6ms | Allocations: 2928)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms | Allocations: 3489)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:36:16 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 24.3ms | Allocations: 2928)
+Completed 200 OK in 32ms (Views: 29.0ms | Allocations: 3524)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:37:04 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | Allocations: 2928)
+Completed 200 OK in 19ms (Views: 17.4ms | Allocations: 3520)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 13:37:49 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.5ms | Allocations: 544)
+  Rendered layout layouts/application.html.erb (Duration: 37.2ms | Allocations: 3459)
+Completed 200 OK in 61ms (Views: 54.4ms | Allocations: 3811)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 13:37:58 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"ffvfvfv", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=ffvfvfv
+Completed 302 Found in 6ms (Allocations: 543)
+
+
+Started GET "/party?name=ffvfvfv" for 127.0.0.1 at 2023-02-27 13:37:58 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"ffvfvfv"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.0ms | Allocations: 473)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 648)
+  Rendered layout layouts/application.html.erb (Duration: 34.5ms | Allocations: 3563)
+Completed 200 OK in 46ms (Views: 40.2ms | Allocations: 3914)
+
+
+Started GET "/party?name=ffvfvfv" for 127.0.0.1 at 2023-02-27 13:37:58 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"ffvfvfv"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.2ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 5.2ms | Allocations: 475)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 10.5ms | Allocations: 650)
+  Rendered layout layouts/application.html.erb (Duration: 25.1ms | Allocations: 3565)
+Completed 200 OK in 30ms (Views: 29.2ms | Allocations: 3916)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 13:38:02 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.4ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 9.3ms | Allocations: 2928)
+Completed 200 OK in 16ms (Views: 14.8ms | Allocations: 3516)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 14:55:07 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1434)
+  Rendered layout layouts/application.html.erb (Duration: 74.9ms | Allocations: 25861)
+Completed 200 OK in 84ms (Views: 78.1ms | ActiveRecord: 0.0ms | Allocations: 31346)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 14:55:15 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 792)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 14:55:15 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 1.6ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 2.3ms | Allocations: 693)
+  Rendered video/_button-chat.html.erb (Duration: 0.5ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 9.9ms | Allocations: 1611)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 4527)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 4941)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 14:55:15 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 499)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3589)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3943)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 14:55:20 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.8ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3056)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 3730)
+
+
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: cc79-103-47-44-135.in.ngrok.io
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: cc79-103-47-44-135.in.ngrok.io
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 14:57:51 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 5.1ms | Allocations: 151)
+  Rendered layout layouts/application.html.erb (Duration: 124.2ms | Allocations: 24572)
+Completed 200 OK in 179ms (Views: 160.5ms | ActiveRecord: 0.0ms | Allocations: 28769)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 14:59:37 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.1ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3494)
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4785)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 15:00:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"sssss", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.1ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 51.8ms | Allocations: 25093)
+Completed 200 OK in 66ms (Views: 54.9ms | ActiveRecord: 0.0ms | Allocations: 31050)
+
+
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: cc79-103-47-44-135.in.ngrok.io
+[ActionDispatch::HostAuthorization::DefaultResponseApp] Blocked host: cc79-103-47-44-135.in.ngrok.io
+Started GET "/" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:01:57 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1292)
+  Rendered layout layouts/application.html.erb (Duration: 43.2ms | Allocations: 25746)
+Completed 200 OK in 53ms (Views: 45.8ms | ActiveRecord: 0.0ms | Allocations: 31232)
+
+
+Started POST "/name" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:02:17 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Anjali", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://cc79-103-47-44-135.in.ngrok.io/party?name=Anjali
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 717)
+
+
+Started GET "/party?name=Anjali" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:02:17 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.3ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.0ms | Allocations: 633)
+  Rendered video/_button-chat.html.erb (Duration: 0.3ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1551)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 4466)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4876)
+
+
+Started GET "/party?name=Anjali" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:02:19 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 461)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 636)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3552)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 3911)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:02:36 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.7ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 3056)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3669)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:03:38 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 2929)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3499)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:03:46 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2928)
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 3480)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 15:03:51 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.9ms | Allocations: 497)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.1ms | Allocations: 672)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3588)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 3946)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 15:03:59 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"abcd", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 13.6ms | Allocations: 2946)
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.0ms | Allocations: 3563)
+
+
+Started POST "/name" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:04:20 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"A", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://cc79-103-47-44-135.in.ngrok.io/party?name=A
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 518)
+
+
+Started GET "/party?name=A" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:04:21 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"A"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 459)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 634)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3549)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 3903)
+
+
+Started GET "/party?name=A" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:04:21 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"A"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.9ms | Allocations: 451)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 626)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 3541)
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.0ms | Allocations: 3895)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:04:40 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"abcd", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2931)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3483)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:05:57 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"abcd", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2931)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms | Allocations: 3481)
+
+
+Started GET "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:06:09 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/chat/send"):
+  
+Started POST "/name" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:06:13 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"A", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://cc79-103-47-44-135.in.ngrok.io/party?name=A
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 510)
+
+
+Started GET "/party?name=A" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:06:13 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"A"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 441)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 616)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 3543)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 3897)
+
+
+Started GET "/party?name=A" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:06:14 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"A"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.6ms | Allocations: 441)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 616)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3531)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 3885)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:06:21 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"abcd", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 43.1ms | Allocations: 2928)
+Completed 200 OK in 51ms (Views: 43.8ms | ActiveRecord: 0.0ms | Allocations: 3484)
+
+
+Started GET "/users/sign_up" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:21 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:25 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/users/sign_up" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:28 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_up"):
+  
+Started GET "/" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:33 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1016)
+  Rendered layout layouts/application.html.erb (Duration: 58.0ms | Allocations: 25486)
+Completed 200 OK in 64ms (Views: 59.6ms | ActiveRecord: 0.0ms | Allocations: 29222)
+
+
+Started POST "/name" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:40 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"Anjali", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://cc79-103-47-44-135.in.ngrok.io/party?name=Anjali
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 776)
+
+
+Started GET "/party?name=Anjali" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:40 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.4ms | Allocations: 136)
+  Rendered video/_chat.html.erb (Duration: 1.2ms | Allocations: 706)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1603)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 4519)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4932)
+
+
+Started GET "/party?name=Anjali" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:41 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"Anjali"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.9ms | Allocations: 520)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 695)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 3610)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 3964)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:21:54 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 134)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3055)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3721)
+
+
+Started POST "/chat/send" for 2409:40c4:41:6f6d:8000:: at 2023-02-27 15:23:20 +0530
+Cannot render console from 2409:40c4:41:6f6d:8000::! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2928)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 3561)
+
+
+Started GET "/" for 103.47.44.135 at 2023-02-27 15:23:42 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.1ms | Allocations: 441)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 3356)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 3710)
+
+
+Started POST "/name" for 103.47.44.135 at 2023-02-27 15:23:47 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://cc79-103-47-44-135.in.ngrok.io/party?name=mobile
+Completed 302 Found in 10ms (ActiveRecord: 0.0ms | Allocations: 520)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 15:23:47 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 24.9ms | Allocations: 443)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 25.6ms | Allocations: 618)
+  Rendered layout layouts/application.html.erb (Duration: 28.6ms | Allocations: 3558)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms | Allocations: 3912)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 15:23:48 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.8ms | Allocations: 459)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 634)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 3549)
+Completed 200 OK in 12ms (Views: 11.5ms | ActiveRecord: 0.0ms | Allocations: 3903)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 15:23:52 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2928)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3490)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 15:23:58 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2928)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms | Allocations: 3494)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 15:24:33 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.8ms | Allocations: 623)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3547)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3901)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 15:24:41 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 641)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 15:24:41 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.9ms | Allocations: 550)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 725)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3644)
+Completed 200 OK in 6ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3998)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 15:24:41 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 542)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 717)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3635)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 3989)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 15:24:43 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2938)
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 3602)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 15:27:23 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 2928)
+Completed 200 OK in 5ms (Views: 4.3ms | Allocations: 3478)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 15:30:27 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2928)
+Completed 200 OK in 5ms (Views: 4.2ms | Allocations: 3489)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:35:48 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.4ms | Allocations: 142)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3500)
+Completed 200 OK in 10ms (Views: 8.4ms | Allocations: 4730)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:36:42 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2928)
+Completed 200 OK in 8ms (Views: 6.1ms | Allocations: 3496)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 16:37:44 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.6ms | Allocations: 133)
+  Rendered video/_chat.html.erb (Duration: 7.9ms | Allocations: 766)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 109)
+  Rendered video/index.html.erb within layouts/application (Duration: 16.2ms | Allocations: 1646)
+  Rendered layout layouts/application.html.erb (Duration: 61.6ms | Allocations: 4561)
+Completed 200 OK in 71ms (Views: 70.8ms | Allocations: 4965)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 16:37:48 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 36.0ms | Allocations: 2928)
+Completed 200 OK in 52ms (Views: 45.8ms | Allocations: 3589)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:38:31 +0530
+Cannot render console from 103.47.44.135! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 2928)
+Completed 200 OK in 8ms (Views: 6.4ms | Allocations: 3491)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:46:01 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 2.4ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 64.7ms | Allocations: 25267)
+Completed 200 OK in 77ms (Views: 68.1ms | ActiveRecord: 0.0ms | Allocations: 31170)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 16:46:22 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 741)
+  Rendered video/_button-chat.html.erb (Duration: 0.5ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1665)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 5010)
+Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms | Allocations: 6046)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:46:25 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3054)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.0ms | Allocations: 3674)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 16:46:52 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.1ms | Allocations: 551)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 726)
+  Rendered layout layouts/application.html.erb (Duration: 6.8ms | Allocations: 3642)
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 4000)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 16:46:56 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.5ms | Allocations: 2928)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms | Allocations: 3594)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:48:56 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.9ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 52.6ms | Allocations: 24935)
+Completed 200 OK in 64ms (Views: 54.8ms | ActiveRecord: 0.0ms | Allocations: 30830)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 16:54:33 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3511)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4863)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 16:55:30 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2928)
+Completed 200 OK in 7ms (Views: 5.6ms | Allocations: 3483)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 16:56:17 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.4ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 3495)
+Completed 200 OK in 7ms (Views: 5.6ms | Allocations: 4832)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 16:57:04 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 146)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 3505)
+Completed 200 OK in 9ms (Views: 7.5ms | Allocations: 4853)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 16:58:27 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 3495)
+Completed 200 OK in 8ms (Views: 6.2ms | Allocations: 4841)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 17:08:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 2.3ms | Allocations: 398)
+  Rendered layout layouts/application.html.erb (Duration: 71.9ms | Allocations: 24922)
+Completed 200 OK in 90ms (Views: 79.6ms | ActiveRecord: 0.0ms | Allocations: 30947)
+
+
+Started GET "/" for 103.47.44.135 at 2023-02-27 17:08:40 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 6.2ms | Allocations: 876)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 4221)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms | Allocations: 5258)
+
+
+Started POST "/name" for 103.47.44.135 at 2023-02-27 17:08:49 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://a5a5-103-47-44-135.in.ngrok.io/party?name=mobile
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 655)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 17:08:49 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.4ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 639)
+  Rendered video/_button-chat.html.erb (Duration: 0.9ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 1557)
+  Rendered layout layouts/application.html.erb (Duration: 12.0ms | Allocations: 4472)
+Completed 200 OK in 13ms (Views: 12.8ms | ActiveRecord: 0.0ms | Allocations: 4882)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 17:08:49 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.3ms | Allocations: 441)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 616)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3531)
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.0ms | Allocations: 3885)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 17:08:53 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 132)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 3054)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 3660)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 17:21:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.5ms | Allocations: 422)
+  Rendered layout layouts/application.html.erb (Duration: 61.1ms | Allocations: 25094)
+Completed 200 OK in 76ms (Views: 66.0ms | ActiveRecord: 0.0ms | Allocations: 31125)
+
+
+Started GET "/users/sign_in" for 103.47.44.135 at 2023-02-27 17:21:23 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_in"):
+  
+Started GET "/" for 103.47.44.135 at 2023-02-27 17:21:28 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 2.3ms | Allocations: 952)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | Allocations: 4297)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 5287)
+
+
+Started POST "/name" for 103.47.44.135 at 2023-02-27 17:21:34 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://a5a5-103-47-44-135.in.ngrok.io/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 593)
+
+
+Started GET "/" for 103.47.44.135 at 2023-02-27 17:21:35 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.0ms | Allocations: 567)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3482)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 3837)
+
+
+Started POST "/name" for 103.47.44.135 at 2023-02-27 17:21:43 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to https://a5a5-103-47-44-135.in.ngrok.io/party?name=mobile
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 619)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 17:21:43 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.6ms | Allocations: 136)
+  Rendered video/_chat.html.erb (Duration: 2.6ms | Allocations: 688)
+  Rendered video/_button-chat.html.erb (Duration: 1.3ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 7.9ms | Allocations: 1584)
+  Rendered layout layouts/application.html.erb (Duration: 31.6ms | Allocations: 4523)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 4935)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 17:21:43 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.4ms | Allocations: 488)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 663)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 3578)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 3932)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 17:21:47 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.7ms | Allocations: 161)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3082)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 3744)
+
+
+Started GET "/rooms/2" for 127.0.0.1 at 2023-02-27 18:09:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/rooms/2"):
+  
+Started GET "/" for 127.0.0.1 at 2023-02-27 18:09:50 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+Completed 500 Internal Server Error in 2421ms (ActiveRecord: 4.5ms | Allocations: 7356)
+
+
+  
+OpenTok::OpenTokError (Failed to connect to OpenTok. Response code: Authentication failed while creating a session. API Key: ):
+  
+app/models/session.rb:23:in `create_new_session'
+app/models/session.rb:18:in `create_or_load_session_id'
+app/controllers/video_controller.rb:9:in `set_opentok_vars'
+Started GET "/" for 127.0.0.1 at 2023-02-27 18:11:27 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+Completed 500 Internal Server Error in 2296ms (ActiveRecord: 2.4ms | Allocations: 7283)
+
+
+  
+OpenTok::OpenTokError (Failed to connect to OpenTok. Response code: Authentication failed while creating a session. API Key: ):
+  
+app/models/session.rb:23:in `create_new_session'
+app/models/session.rb:18:in `create_or_load_session_id'
+app/controllers/video_controller.rb:9:in `set_opentok_vars'
+Started GET "/" for 127.0.0.1 at 2023-02-27 18:27:12 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/session.rb:26:in `create_new_session'
+  [1m[36mSession Create (2.2ms)[0m  [1m[32mINSERT INTO "sessions" ("session_id", "expired", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["session_id", "2_MX40NzY3MTQyMX5-MTY3NzUwMjYzNTA4NX50QnNsdUUzdmhxOVJReVZGZ0lSOFFXVGt-UH5-"], ["expired", false], ["created_at", "2023-02-27 12:57:15.249786"], ["updated_at", "2023-02-27 12:57:15.249786"]]
+  ↳ app/models/session.rb:26:in `create_new_session'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/session.rb:26:in `create_new_session'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1115)
+  Rendered layout layouts/application.html.erb (Duration: 66.2ms | Allocations: 26475)
+Completed 200 OK in 3189ms (Views: 69.1ms | ActiveRecord: 15.7ms | Allocations: 52922)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 18:27:21 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.8ms | Allocations: 2493)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 18:27:21 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.9ms | Allocations: 674)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 3181)
+Completed 200 OK in 10ms (Views: 5.1ms | ActiveRecord: 0.6ms | Allocations: 4865)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 18:27:38 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.2ms | Allocations: 703)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 3265)
+Completed 200 OK in 19ms (Views: 7.4ms | ActiveRecord: 4.0ms | Allocations: 8134)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 18:27:45 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2099)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 18:27:45 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 136)
+  Rendered video/_chat.html.erb (Duration: 2.6ms | Allocations: 784)
+  Rendered video/_button-chat.html.erb (Duration: 1.3ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1686)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 4194)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 5930)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 18:27:45 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 599)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 778)
+  Rendered layout layouts/application.html.erb (Duration: 5.2ms | Allocations: 3285)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.4ms | Allocations: 4966)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:27:48 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 158)
+  Rendered layout layouts/application.html.erb (Duration: 4.8ms | Allocations: 2679)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.4ms | Allocations: 4766)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:28:19 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.1ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 3089)
+Completed 200 OK in 20ms (Views: 10.4ms | ActiveRecord: 0.7ms | Allocations: 5810)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:28:23 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2527)
+Completed 200 OK in 13ms (Views: 7.4ms | ActiveRecord: 0.6ms | Allocations: 4557)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:28:44 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.4ms | Allocations: 137)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 3102)
+Completed 200 OK in 11ms (Views: 6.5ms | ActiveRecord: 0.6ms | Allocations: 5814)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:29:05 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 2528)
+Completed 200 OK in 27ms (Views: 15.4ms | ActiveRecord: 2.5ms | Allocations: 4444)
+
+
+Started GET "/" for 103.47.44.135 at 2023-02-27 18:29:16 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 2.6ms | Allocations: 891)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3398)
+Completed 200 OK in 15ms (Views: 8.1ms | ActiveRecord: 1.3ms | Allocations: 5134)
+
+
+Started POST "/name" for 103.47.44.135 at 2023-02-27 18:29:21 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to https://a5a5-103-47-44-135.in.ngrok.io/party?name=mobile
+Completed 302 Found in 10ms (ActiveRecord: 0.6ms | Allocations: 1863)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-27 18:29:21 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.3ms | Allocations: 133)
+  Rendered video/_chat.html.erb (Duration: 1.1ms | Allocations: 668)
+  Rendered video/_button-chat.html.erb (Duration: 0.5ms | Allocations: 109)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1552)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4059)
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.5ms | Allocations: 5793)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:29:26 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2528)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 4441)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 18:30:00 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 2.3ms | Allocations: 594)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 773)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 3280)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 4961)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:30:04 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2528)
+Completed 200 OK in 10ms (Views: 4.3ms | ActiveRecord: 0.8ms | Allocations: 4571)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:30:21 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 2528)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 0.7ms | Allocations: 4446)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:35:33 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 2528)
+Completed 200 OK in 53ms (Views: 14.2ms | ActiveRecord: 11.0ms | Allocations: 7248)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:36:19 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.6ms | Allocations: 136)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3102)
+Completed 200 OK in 21ms (Views: 14.3ms | ActiveRecord: 0.6ms | Allocations: 5809)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:36:29 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 2528)
+Completed 200 OK in 16ms (Views: 8.4ms | ActiveRecord: 0.9ms | Allocations: 4449)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:43:03 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.9ms | Allocations: 2528)
+Completed 200 OK in 23ms (Views: 4.6ms | ActiveRecord: 7.3ms | Allocations: 7374)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:43:14 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2528)
+Completed 200 OK in 18ms (Views: 4.9ms | ActiveRecord: 1.2ms | Allocations: 4438)
+
+
+Started GET "/" for ::1 at 2023-02-27 18:43:33 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.6ms | Allocations: 759)
+  Rendered layout layouts/application.html.erb (Duration: 6.4ms | Allocations: 3266)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 5002)
+
+
+Started POST "/name" for ::1 at 2023-02-27 18:43:40 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://localhost:3000/party?name=mobile
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1835)
+
+
+Started GET "/party?name=mobile" for ::1 at 2023-02-27 18:43:40 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 133)
+  Rendered video/_chat.html.erb (Duration: 1.2ms | Allocations: 635)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 109)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1519)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 4027)
+Completed 200 OK in 14ms (Views: 9.5ms | ActiveRecord: 0.5ms | Allocations: 5763)
+
+
+Started GET "/party?name=mobile" for ::1 at 2023-02-27 18:43:40 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 423)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 602)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | Allocations: 3109)
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.6ms | Allocations: 4790)
+
+
+Started POST "/chat/send" for ::1 at 2023-02-27 18:43:43 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2553)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 4445)
+
+
+Started GET "/" for ::1 at 2023-02-27 18:44:12 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.8ms | Allocations: 421)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2928)
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 0.6ms | Allocations: 4611)
+
+
+Started POST "/name" for ::1 at 2023-02-27 18:44:19 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1797)
+
+
+Started GET "/" for ::1 at 2023-02-27 18:44:19 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 0.7ms | Allocations: 515)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 3022)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.6ms | Allocations: 4705)
+
+
+Started POST "/name" for ::1 at 2023-02-27 18:44:25 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://localhost:3000/party?name=mobile
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 1827)
+
+
+Started GET "/party?name=mobile" for ::1 at 2023-02-27 18:44:25 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 445)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 624)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3131)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 4812)
+
+
+Started GET "/party?name=mobile" for ::1 at 2023-02-27 18:44:25 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.8ms | Allocations: 443)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 622)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 3129)
+Completed 200 OK in 11ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 4810)
+
+
+Started POST "/chat/send" for ::1 at 2023-02-27 18:44:29 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 2528)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.5ms | Allocations: 4398)
+
+
+Started POST "/chat/send" for ::1 at 2023-02-27 18:45:22 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2528)
+Completed 200 OK in 15ms (Views: 5.8ms | ActiveRecord: 1.0ms | Allocations: 4398)
+
+
+Started POST "/chat/send" for ::1 at 2023-02-27 18:50:27 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.5ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 3113)
+Completed 200 OK in 39ms (Views: 15.1ms | ActiveRecord: 10.5ms | Allocations: 8490)
+
+
+Started POST "/chat/send" for ::1 at 2023-02-27 18:50:34 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 5.3ms | Allocations: 2528)
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.6ms | Allocations: 4413)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:55:48 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 1.1ms | Allocations: 404)
+  Rendered layout layouts/application.html.erb (Duration: 64.6ms | Allocations: 24454)
+Completed 200 OK in 125ms (Views: 68.3ms | ActiveRecord: 6.5ms | Allocations: 49447)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 18:57:57 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 3116)
+Completed 200 OK in 13ms (Views: 7.1ms | ActiveRecord: 0.7ms | Allocations: 5850)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:58:20 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2529)
+Completed 200 OK in 11ms (Views: 4.9ms | ActiveRecord: 0.6ms | Allocations: 4467)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 18:59:52 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.8ms | Allocations: 177)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3142)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.7ms | Allocations: 5731)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-27 19:00:16 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 4.2ms | Allocations: 849)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 3357)
+Completed 200 OK in 22ms (Views: 17.3ms | ActiveRecord: 0.6ms | Allocations: 5114)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-02-27 19:00:22 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1968)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 19:00:22 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 1.1ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 2.8ms | Allocations: 633)
+  Rendered video/_button-chat.html.erb (Duration: 0.4ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 8.0ms | Allocations: 1558)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 4090)
+Completed 200 OK in 36ms (Views: 15.5ms | ActiveRecord: 1.0ms | Allocations: 5835)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-02-27 19:00:23 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.0ms | Allocations: 439)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 618)
+  Rendered layout layouts/application.html.erb (Duration: 9.1ms | Allocations: 3125)
+Completed 200 OK in 18ms (Views: 9.7ms | ActiveRecord: 1.0ms | Allocations: 4806)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 19:00:25 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2528)
+Completed 200 OK in 9ms (Views: 4.9ms | ActiveRecord: 0.5ms | Allocations: 4404)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-02-27 19:00:43 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.8ms | Allocations: 153)
+  Rendered layout layouts/application.html.erb (Duration: 10.2ms | Allocations: 3119)
+Completed 200 OK in 18ms (Views: 12.4ms | ActiveRecord: 0.8ms | Allocations: 5742)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 19:03:13 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.7ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.3ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 58.8ms | Allocations: 2531)
+Completed 200 OK in 89ms (Views: 61.9ms | ActiveRecord: 1.0ms | Allocations: 4467)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-27 19:03:18 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.4ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 2538)
+Completed 200 OK in 16ms (Views: 9.8ms | ActiveRecord: 0.7ms | Allocations: 4464)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-28 14:59:59 +0530
+Started GET "/" for 127.0.0.1 at 2023-02-28 14:59:59 +0530
+Started GET "/" for 127.0.0.1 at 2023-02-28 14:59:59 +0530
+Started GET "/" for 127.0.0.1 at 2023-02-28 14:59:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (2.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+Processing by VideoController#landing as HTML
+Processing by VideoController#landing as HTML
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (1.9ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Exists? (1.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.8ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (2.1ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mSession Load (2.6ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendering video/landing.html.erb within layouts/application
+  Rendering video/landing.html.erb within layouts/application
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 10.4ms | Allocations: 1655)
+  Rendered video/landing.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2276)
+  Rendered video/landing.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3004)
+  Rendered video/landing.html.erb within layouts/application (Duration: 10.9ms | Allocations: 3701)
+  Rendered layout layouts/application.html.erb (Duration: 128.5ms | Allocations: 67556)
+  Rendered layout layouts/application.html.erb (Duration: 127.0ms | Allocations: 67991)
+Completed 200 OK in 211ms (Views: 138.2ms | ActiveRecord: 9.8ms | Allocations: 107141)
+
+
+Completed 200 OK in 211ms (Views: 139.0ms | ActiveRecord: 29.1ms | Allocations: 107522)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 160.2ms | Allocations: 87012)
+Completed 200 OK in 240ms (Views: 168.6ms | ActiveRecord: 19.4ms | Allocations: 125889)
+
+
+  Rendered layout layouts/application.html.erb (Duration: 164.2ms | Allocations: 89194)
+Completed 200 OK in 244ms (Views: 171.4ms | ActiveRecord: 28.6ms | Allocations: 127751)
+
+
+Started GET "/" for 127.0.0.1 at 2023-02-28 15:01:34 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1537)
+  Rendered layout layouts/application.html.erb (Duration: 63.1ms | Allocations: 25774)
+Completed 200 OK in 102ms (Views: 67.0ms | ActiveRecord: 7.0ms | Allocations: 50201)
+
+
+Started GET "/" for 103.47.44.135 at 2023-02-28 15:01:41 +0530
+Processing by VideoController#landing as HTML
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 1.2ms | Allocations: 442)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 2950)
+Completed 200 OK in 11ms (Views: 5.9ms | ActiveRecord: 0.7ms | Allocations: 4655)
+
+
+Started POST "/name" for 103.47.44.135 at 2023-02-28 15:01:46 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+Redirected to https://820b-103-47-44-135.in.ngrok.io/party?name=mobile
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms | Allocations: 2033)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-28 15:01:46 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.5ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 1.1ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 2.2ms | Allocations: 653)
+  Rendered video/_button-chat.html.erb (Duration: 0.8ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 7.0ms | Allocations: 1575)
+  Rendered layout layouts/application.html.erb (Duration: 11.7ms | Allocations: 4083)
+Completed 200 OK in 19ms (Views: 12.8ms | ActiveRecord: 0.7ms | Allocations: 5821)
+
+
+Started GET "/party?name=mobile" for 103.47.44.135 at 2023-02-28 15:01:46 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 1.8ms | Allocations: 449)
+  Rendered video/_button-chat.html.erb (Duration: 0.1ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 628)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 3135)
+Completed 200 OK in 16ms (Views: 10.1ms | ActiveRecord: 0.7ms | Allocations: 4816)
+
+
+Started POST "/chat/send" for 103.47.44.135 at 2023-02-28 15:01:52 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "sessions" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:7:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 11.1ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 15.3ms | Allocations: 2696)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 0.7ms | Allocations: 4629)
+
+
