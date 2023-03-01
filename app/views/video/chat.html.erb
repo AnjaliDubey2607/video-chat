@@ -1,7 +1,15 @@
 <h1>Video#chat</h1>
 <%# <p>Find me in app/views/video/chat.html.erb</p> %>
       
-<script src="https://tokbox.com/embed/embed/ot-embed.js?embedId=daec8e1b-d2c2-458d-b72e-0a1c7d614d8f&room=DEFAULT_ROOM"></script>
+<%# <script src="https://tokbox.com/embed/embed/ot-embed.js?embedId=daec8e1b-d2c2-458d-b72e-0a1c7d614d8f&room=DEFAULT_ROOM"></script> %>
 
-<%# <div id="otEmbedContainer" style="width:800px; height:640px"></div>
-                    <script src="https://tokbox.com/embed/embed/ot-embed.js?embedId=daec8e1b-d2c2-458d-b72e-0a1c7d614d8f&room=DEFAULT_ROOM"></script> %>
+        <iframe
+          src="https://tokbox.com/embed/embed/ot-embed.js?embedId=daec8e1b-d2c2-458d-b72e-0a1c7d614d8f&room=DEFAULT_ROOM&iframe=true"
+          width=800
+          height=640
+          scrolling="auto"
+          allow="microphone; camera"
+        ></iframe>
+      
+<div id="otEmbedContainer" style="width:800px; height:640px"></div>
+                    <script src="https://tokbox.com/embed/embed/ot-embed.js?embedId=daec8e1b-d2c2-458d-b72e-0a1c7d614d8f&room=DEFAULT_ROOM"></script>
