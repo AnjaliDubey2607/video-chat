@@ -3086,3 +3086,66 @@ Migrating to CreateSessions (20230223120020)
   [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(2831305709993823825)[0m
   [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/chat/send" for 127.0.0.1 at 2023-03-01 14:53:59 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 2.0ms | Allocations: 414)
+  Rendered layout layouts/application.html.erb (Duration: 54.9ms | Allocations: 24659)
+Completed 200 OK in 78ms (Views: 59.9ms | ActiveRecord: 0.0ms | Allocations: 31492)
+
+
+Started GET "/" for 127.0.0.1 at 2023-03-01 14:54:28 +0530
+Processing by VideoController#landing as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 3.3ms | Allocations: 861)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | Allocations: 3806)
+Completed 200 OK in 19ms (Views: 18.2ms | ActiveRecord: 0.0ms | Allocations: 5123)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-03-01 14:54:41 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms | Allocations: 925)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-03-01 14:54:41 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.6ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.2ms | Allocations: 637)
+  Rendered video/_button-chat.html.erb (Duration: 0.5ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 5.3ms | Allocations: 1559)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4067)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 4755)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-03-01 14:54:41 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.0ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.6ms | Allocations: 435)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 614)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | Allocations: 3122)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 3754)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-03-01 14:54:44 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.6ms | Allocations: 148)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2671)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.0ms | Allocations: 3546)
+
+

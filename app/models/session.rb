@@ -4,7 +4,7 @@ class Session < ApplicationRecord
   @opentok = OpenTok::OpenTok.new "47671421", "239c35564d367828681de0398afb3ac47430cbdb"
 
   def self.create_or_load_session_id
-    sessions = Session.all
+    #sessions = Session.all
     if sessions.present?
       last_session = Session.last
       if last_session && last_session.expired == false
