@@ -2937,3 +2937,123 @@ Processing by VideoController#index as HTML
 Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.5ms | Allocations: 5014)
 
 
+Started GET "/" for 127.0.0.1 at 2023-03-01 12:34:47 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by VideoController#landing as HTML
+  [1m[36mSession Load (4.0ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/landing.html.erb within layouts/application
+  Rendered video/landing.html.erb within layouts/application (Duration: 5.4ms | Allocations: 1333)
+  Rendered layout layouts/application.html.erb (Duration: 75.5ms | Allocations: 25783)
+Completed 200 OK in 128ms (Views: 83.7ms | ActiveRecord: 8.9ms | Allocations: 50008)
+
+
+Started POST "/name" for 127.0.0.1 at 2023-03-01 12:34:54 +0530
+Processing by VideoController#name as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "name"=>"mobile", "password"=>"[FILTERED]", "commit"=>"Submit"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+Redirected to http://127.0.0.1:3000/party?name=mobile
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms | Allocations: 2112)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-03-01 12:34:54 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.5ms | Allocations: 139)
+  Rendered video/_chat.html.erb (Duration: 1.2ms | Allocations: 674)
+  Rendered video/_button-chat.html.erb (Duration: 0.5ms | Allocations: 110)
+  Rendered video/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1596)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 4105)
+Completed 200 OK in 13ms (Views: 8.2ms | ActiveRecord: 0.6ms | Allocations: 5863)
+
+
+Started GET "/party?name=mobile" for 127.0.0.1 at 2023-03-01 12:34:54 +0530
+Processing by VideoController#index as HTML
+  Parameters: {"name"=>"mobile"}
+  [1m[36mSession Load (0.3ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/index.html.erb within layouts/application
+  Rendered video/_header.html.erb (Duration: 0.1ms | Allocations: 10)
+  Rendered video/_chat.html.erb (Duration: 0.7ms | Allocations: 480)
+  Rendered video/_button-chat.html.erb (Duration: 0.0ms | Allocations: 8)
+  Rendered video/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 659)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 3167)
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.5ms | Allocations: 4867)
+
+
+Started POST "/chat/send" for 127.0.0.1 at 2023-03-01 12:34:57 +0530
+Processing by VideoController#chat as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "message"=>"1234", "commit"=>"Submit"}
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions"[0m
+  ↳ app/models/session.rb:8:in `create_or_load_session_id'
+  [1m[36mSession Load (0.2ms)[0m  [1m[34mSELECT "sessions".* FROM "sessions" ORDER BY "sessions"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/models/session.rb:9:in `create_or_load_session_id'
+  Rendering layout layouts/application.html.erb
+  Rendering video/chat.html.erb within layouts/application
+  Rendered video/chat.html.erb within layouts/application (Duration: 0.7ms | Allocations: 150)
+  Rendered layout layouts/application.html.erb (Duration: 4.1ms | Allocations: 2673)
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.4ms | Allocations: 4677)
+
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (28.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "video_watch_development"[0m
+  [1m[35m (18.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "video_watch_test"[0m
+  [1m[35m (290.1ms)[0m  [1m[35mCREATE DATABASE "video_watch_development" ENCODING = 'unicode'[0m
+  [1m[35m (60.2ms)[0m  [1m[35mCREATE DATABASE "video_watch_test" ENCODING = 'unicode'[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSessions (20230223120021)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "session_id" character varying NOT NULL, "expired" boolean DEFAULT FALSE, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230223120021"]]
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-03-01 07:26:50.297601"], ["updated_at", "2023-03-01 07:26:50.297601"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSessions (20230223120021)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mDROP TABLE "sessions"[0m
+  [1m[36mActiveRecord::SchemaMigration Delete All (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20230223120021"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSessions (20230223120021)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE "sessions" ("id" bigserial primary key, "session_id" character varying NOT NULL, "expired" boolean DEFAULT FALSE, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230223120021"]]
+  [1m[36mTRANSACTION (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2904158140361604315)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

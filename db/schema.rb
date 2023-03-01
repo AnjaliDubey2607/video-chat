@@ -17,6 +17,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_23_120021) do
   create_table "sessions", force: :cascade do |t|
     t.string "session_id", null: false
     t.boolean "expired", default: false
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
